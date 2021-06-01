@@ -9,11 +9,11 @@ BRANCH    := $(or $(shell git symbolic-ref --short HEAD 2>/dev/null), "from-rele
 BUILDDATE := $(shell date --iso-8601=seconds)
 BUILDUSER ?= $(USER)
 BUILDHOST ?= $(HOSTNAME)
-LDFLAGS    = -X github.com/carlpett/stream_exporter/vendor/github.com/prometheus/common/version.Version=$(VERSION) \
-             -X github.com/carlpett/stream_exporter/vendor/github.com/prometheus/common/version.Revision=$(REVISION) \
-             -X github.com/carlpett/stream_exporter/vendor/github.com/prometheus/common/version.Branch=$(BRANCH) \
-             -X github.com/carlpett/stream_exporter/vendor/github.com/prometheus/common/version.BuildUser=$(BUILDUSER)@$(BUILDHOST) \
-             -X github.com/carlpett/stream_exporter/vendor/github.com/prometheus/common/version.BuildDate=$(BUILDDATE)
+LDFLAGS    = -X github.com/potatoattack/stream_exporter/vendor/github.com/prometheus/common/version.Version=$(VERSION) \
+             -X github.com/potatoattack/stream_exporter/vendor/github.com/prometheus/common/version.Revision=$(REVISION) \
+             -X github.com/potatoattack/stream_exporter/vendor/github.com/prometheus/common/version.Branch=$(BRANCH) \
+             -X github.com/potatoattack/stream_exporter/vendor/github.com/prometheus/common/version.BuildUser=$(BUILDUSER)@$(BUILDHOST) \
+             -X github.com/potatoattack/stream_exporter/vendor/github.com/prometheus/common/version.BuildDate=$(BUILDDATE)
 
 all: build test
 
@@ -37,7 +37,7 @@ release: bin/github-release
 
 docker:
 	@echo ">> building docker image"
-	@$(DOCKER) build -t carlpett/stream_exporter .
+	@$(DOCKER) build -t potatoattack/stream_exporter .
 
 $(GOPATH)/bin/gox:
 	# Need to disable modules for this to not pollute go.mod

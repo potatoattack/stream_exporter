@@ -13,8 +13,8 @@ import (
 	"github.com/prometheus/common/log"
 	"github.com/prometheus/common/version"
 
-	"github.com/carlpett/stream_exporter/input"
-	"github.com/carlpett/stream_exporter/linemetrics"
+	"github.com/potatoattack/stream_exporter/input"
+	"github.com/potatoattack/stream_exporter/linemetrics"
 )
 
 var (

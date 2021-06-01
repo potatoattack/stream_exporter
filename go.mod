@@ -3,7 +3,6 @@ module github.com/potatoattack/stream_exporter
 go 1.16
 
 require (
-	github.com/carlpett/stream_exporter v0.3.0
 	github.com/hpcloud/tail v1.0.0
 	github.com/prometheus/client_golang v1.10.0
 	github.com/prometheus/common v0.25.0
